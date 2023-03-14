@@ -8,6 +8,7 @@
 </head>
 <body>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script>
         function parseJwt (token) {
             var base64Url = token.split('.')[1];
@@ -23,10 +24,13 @@
             console.log(data); 
             console.log("ID: " + data); // Don't send this directly to your server!
             console.log('Full Name: ' + data['name']);
-            console.log('Given Name: ' + profile.getGivenName());
-            console.log('Family Name: ' + profile.getFamilyName());
-            console.log("Image URL: " + profile.getImageUrl());
-            console.log("Email: " + profile.getEmail());
+            console.log('Given Name: ' + data['given_name']);
+            console.log('Family Name: ' + data['family_name']);
+            console.log("Image URL: " + data['picture']);
+            console.log("Email: " + data['email']);
+            var person_img = ("<img  src=\""+data['picture']+"\" />");
+            console.log(person_img);
+            $('img')[1].append(person_img);
         };
     </script>
     <div
@@ -34,6 +38,7 @@
         data-client_id="45496741721-go8vt6bbfulav5jbp81eccn6adlob7tu.apps.googleusercontent.com"
         data-callback="handleCallback"
         data-auto_prompt="false"
+        data-prompt="select_account"
     ></div>
     <div
         class="g_id_signin"
@@ -43,9 +48,10 @@
         data-text="sign_in_with"
         data-shape="pill"
         data-logo_alignment="left"
+        
     ></div>
-    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=bar&chl=https%3A%2F%2Fwww.youtube.com&choe=UTF-8" />
-    <img src="https://barcodeapi.org/api/auto/youtube.com" />
+    <img src="https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=https%3A%2F%2Fwww.youtube.com&choe=UTF-8" />
+    <img id="qr" src="https://barcodeapi.org/api/auto/youtube.com" />
 </body>
 </html>
 
