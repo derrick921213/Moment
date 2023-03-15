@@ -1,5 +1,7 @@
 <?php require_once('auth.php') ?>
 <?php require_once('vendor/autoload.php') ?>
+<?php require_once('config.php')?>
+
 <?php
 $clientID = "45496741721-go8vt6bbfulav5jbp81eccn6adlob7tu.apps.googleusercontent.com";
 $secret = "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";
