@@ -28,7 +28,7 @@ require_once('core/controller.Class.php');
             }
             else{
         ?>
-        <img src="img/logo.png" alt="Logo" style="display: table;margin:0 atuo;max-width: 150px;">
+        <img src="img/logo.png" alt="Logo" style="display: table;margin:0 atuo;max-width: 150px;"/>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email Address</label>
