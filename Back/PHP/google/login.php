@@ -7,7 +7,7 @@
 $gclient = new Google_Client();
 $gclient->setClientId($clientID);
 $gclient->setClientSecret($secret);
-$gclient->setRedirectUri('https://moment.duacodie.com/back/PHP/login.php');
+$gclient->setRedirectUri('https://moment.duacodie.com/back/PHP/google/login.php');
 
 $gclient->addScope('email');
 $gclient->addScope('profile');

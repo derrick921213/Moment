@@ -11,12 +11,13 @@ require_once('core/controller.Class.php');
     <title>Login With Google</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <div class="container" style="margin-top:100px;">
         <?php
             if(isset($_COOKIE["id"]) && isset($_COOKIE["sss"])){
-                $Controller = new Controller($user,$passwd);
+                $Controller = new Controller;
                 if($Controller->checkUserStatus($_COOKIE["id"],$_COOKIE["sss"])){
                     echo $Controller->printData(intval($_COOKIE["id"]));
                     echo '<div class="d-grid gap-1">';
