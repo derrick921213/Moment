@@ -1,14 +1,14 @@
 <?php
 require_once('core/controller.Class.php');
 require_once('config.php');
-require_once('SessionMG.php');
+// require_once('SessionMG.php');
 
 //Start Debug Message
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 //End Debug Message
 if(isset($_GET["code"])){
-    $_SESSION['ucode'] = $_GET["code"];
+    // $_SESSION['ucode'] = $_GET["code"];
     $token = $gClient->fetchAccessTokenWithAuthCode($_GET["code"]);
 }
 else{
@@ -20,7 +20,7 @@ if(isset($token["error"])!="invalid_grant"){
     $userData = $oAuth->userinfo_v2_me->get();
 
     //insert data
-    $Controller = new Controller;
+    $Controller = new Controller($user,$passwd);
     echo $Controller->insertData(array(
         'email' => $userData['email'],
         'avatar' => $userData['picture'],
