@@ -11,9 +11,12 @@ require_once('core/controller.Class.php');
     <title>Login With Google</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    
 </head>
 <body>
-    <div class="container" style="margin-top:100px;">
+<!-- style="margin-top:100px;" -->
+    <div class="container">
         <?php
             if(isset($_COOKIE["id"]) && isset($_COOKIE["sss"])){
                 $Controller = new Controller($user,$passwd);
