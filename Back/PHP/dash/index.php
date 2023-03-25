@@ -1,6 +1,9 @@
 <?php
 require_once('config.php');
 require_once('core/controller.Class.php');
+define('ROOT_PATH', dirname(__DIR__) . '/');
+// require_once(ROOT_PATH.'SessionMG.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,18 +19,18 @@ require_once('core/controller.Class.php');
 </head>
 <body>
 <!-- style="margin-top:100px;" -->
+<!-- && isset($_SESSION['ucode']) -->
     <div class="container">
         <?php
-            if(isset($_COOKIE["id"]) && isset($_COOKIE["sss"])){
+            if(isset($_COOKIE["id"]) && isset($_COOKIE["sss"]) && isset($_SESSION['ucode'])){
                 $Controller = new Controller($user,$passwd);
                 if($Controller->checkUserStatus($_COOKIE["id"],$_COOKIE["sss"])){
-                    echo $Controller->printData(intval($_COOKIE["id"]));
-                    echo '<div class="d-grid gap-1">';
-                    echo '<a class="btn btn-outline-danger" role="button" href="logout.php">Logout</a>';
-                    echo '</div>';
+                    header('location:dashboard.php');
+                    exit();
                 }
                 else{
-                    echo "Error!";
+                    header('location:index.php');
+                    exit();
                 }
             }
             else{

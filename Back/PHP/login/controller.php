@@ -8,7 +8,6 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 //End Debug Message
 if(isset($_GET["code"])){
-    // $_SESSION['ucode'] = $_GET["code"];
     $token = $gClient->fetchAccessTokenWithAuthCode($_GET["code"]);
 }
 else{

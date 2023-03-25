@@ -1,8 +1,8 @@
 <?php
 require_once('core/controller.Class.php');
 require_once('config.php');
-require_once('SessionMG.php');
-
+// require_once('SessionMG.php');
+session_start();
 //Start Debug Message
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
@@ -16,6 +16,7 @@ else{
     exit();
 }
 if(isset($token["error"])!="invalid_grant"){
+     
     $oAuth = new Google_Service_Oauth2($gClient);
     $userData = $oAuth->userinfo_v2_me->get();
 
