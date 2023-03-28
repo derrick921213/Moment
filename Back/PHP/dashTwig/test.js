@@ -26,8 +26,26 @@ $("#close-btn").on('click',()=>{
     $("aside").hide() ;
 });
 
+
+var Dark;
 $(".theme-toggler").on('click',()=>{
     $("body").toggleClass('dark-theme-variables');
+    if($("body").hasClass('dark-theme-variables')){
+        Dark = 'dark-theme-variables';
+    }
+    else{
+        Dark = '';
+    }
     $(".theme-toggler").children("span").eq(0).toggleClass('active');
     $(".theme-toggler").children("span").eq(1).toggleClass('active');
+});
+
+
+$(document).ready(function() {
+    if(Dark==='dark-theme-variables'){
+        $("body").addClass(Dark);
+    }
+    else{
+        $("body").removeClass(Dark);
+    }
 });

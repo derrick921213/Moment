@@ -1,12 +1,12 @@
 <?php
 require_once('../vendor/autoload.php');
 session_start();
-
+static $Dark_Mode = false;
 $URLS = array(
     "avatar" => $_SESSION["userData"]["avatar"],
     "givenName" => $_SESSION['userData']['givenName'],
     "dashboard" => "dashboard.php",
-    "customers" => "customers.php"
+    "customers" => "customers.php",
 );
 
 function Base(callable $fn){
