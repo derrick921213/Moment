@@ -10,7 +10,12 @@ session_start();
 
 if (isset($_SESSION['ucode'])) {
     $Controller = new Controller($user, $passwd);
+    if($_COOKIE['id']!=$_SESSION['id']){
+        header('location:logout.php'); 
+        exit();
+    }
     if ($Controller->checkUserStatus($_COOKIE["id"], $_COOKIE["sss"])) {
+        
         ?>
         <!DOCTYPE html>
         <html lang="en">
@@ -24,7 +29,7 @@ if (isset($_SESSION['ucode'])) {
                 integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
             <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Sharp" rel="stylesheet"> -->
             <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-            <link rel="stylesheet" href="./style.css">
+            <link rel="stylesheet" href="./style1.css">
         </head>
 
         <body>
@@ -224,11 +229,12 @@ if (isset($_SESSION['ucode'])) {
                         </div>
                         <div class="profile">
                             <div class="info">
-                                <p>Hey, <b>Daniel</b></p>
+                                <p>Hey, <b><?= $_SESSION['userData']['givenName'] ?></b></p>
                                 <small class="text-muted">Admin</small>
                             </div>
                             <div class="profile-photo">
-                                <img src="./images/profile-1.jpg">
+                                <!-- <img src="./images/profile-1.jpg"> -->
+                                <img src="<?= $_SESSION["userData"]["avatar"] ?>">
                             </div>
                         </div>
                     </div>

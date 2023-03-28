@@ -404,7 +404,7 @@ main table tbody td{
 
 .right .top .profile{
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
     text-align: right;
 }
 

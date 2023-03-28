@@ -1,6 +1,7 @@
 <?php
 define('ROOT_PATH', dirname(__DIR__) . '/');
 require_once(ROOT_PATH.'config.php');
+session_start();
 class Connect extends PDO{
     public function __construct($user,$passwd){
         parent::__construct("mysql:host=localhost;dbname=Moment",$user,$passwd,array(PDO::MYSQL_ATTR_INIT_COMMAND=>"SET NAMES utf8"));
@@ -86,6 +87,7 @@ class Controller{
             if($inserUser){
                 setcookie("id",$this->db->lastInsertId(),time()+60*60*24*30,"/","moment.duacodie.com");
                 setcookie("sss",$session,time()+60*60*24*30,"/","moment.duacodie.com");
+                $_SESSION['id'] = $this->db->lastInsertId();
                 header('Location: index.php');
                 exit();
             }
@@ -96,6 +98,7 @@ class Controller{
         else{
             setcookie("id",$info["id"],time()+60*60*24*30,"/","moment.duacodie.com");
             setcookie("sss",$info["session"],time()+60*60*24*30,"/","moment.duacodie.com");
+            $_SESSION['id'] = $info["id"];
             header('Location: index.php');
             exit();
         }

@@ -2,7 +2,6 @@
 require_once('config.php');
 require_once('core/controller.Class.php');
 define('ROOT_PATH', dirname(__DIR__) . '/');
-// require_once(ROOT_PATH.'SessionMG.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -18,9 +17,7 @@ session_start();
     
 </head>
 <body>
-<!-- style="margin-top:100px;" -->
-<!-- && isset($_SESSION['ucode']) -->
-    <div class="container">
+    <div class="container" style="margin-top:100px;">
         <?php
             if(isset($_COOKIE["id"]) && isset($_COOKIE["sss"]) && isset($_SESSION['ucode'])){
                 $Controller = new Controller($user,$passwd);
