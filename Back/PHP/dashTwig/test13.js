@@ -98,6 +98,6 @@ themeToggler.on("click", () => {
 
 if (isDarkTheme !== null) {
   const isActive = isDarkTheme === "true";
-  themeToggler.children("span").eq(0).toggleClass("active", isActive);
-  themeToggler.children("span").eq(1).toggleClass("active", !isActive);
+  themeToggler.children("span").eq(0).toggleClass("active", !isActive);
+  themeToggler.children("span").eq(1).toggleClass("active", isActive);
 }
