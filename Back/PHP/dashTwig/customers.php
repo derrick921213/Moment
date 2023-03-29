@@ -1,5 +1,4 @@
 <?php
-
 require_once('Base.php');
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -11,6 +10,5 @@ Base(function() use ($url,&$Dark){
         $url["customers_active"] = "active";
         echo $twig->render('customers.twig',$url);
     }
-    
 });
 ?>

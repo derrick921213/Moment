@@ -1,5 +1,5 @@
 <?php
-require_once('../vendor/autoload.php');
+// require_once('../vendor/autoload.php');
 require_once('Base.php');
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
@@ -13,6 +13,5 @@ Base(function() use ($url,&$Dark){
         $url["dashboard_active"] = "active";
         echo $twig->render('dashboard.twig',$url);
     }
-    
 });
 ?>
