@@ -30,3 +30,5 @@ test/
 
 # End of https://www.toptal.com/developers/gitignore/api/dotenv,visualstudiocode,vue
 config.php
+
+node_modules
