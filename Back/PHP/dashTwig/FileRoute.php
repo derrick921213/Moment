@@ -20,10 +20,6 @@ $_SESSION["Page_PATH"] = Page_PATH;
 $_SESSION["Image_PATH"] = Image_PATH;
 $_SESSION["LOGOUT"] = Logout;
 
-// foreach($_SERVER as $key => $val){
-//     echo $key." => ".$val."<br>";
-// }
-
 //Define User templates
 function outputFiles($path)
 {
