@@ -22,14 +22,15 @@ module.exports = {
         // use: ["style-loader", "css-loader"],
         use: [
           MiniCssExtractPlugin.loader,
-          // "css-loader",
           {
             loader: 'css-loader',
             options: {
               importLoaders: 1,
-            },
+            }
           },
-          { loader: 'postcss-loader' }
+          {
+            loader: 'postcss-loader'
+          }
         ],
       },
       {
@@ -38,7 +39,6 @@ module.exports = {
       }
     ],
   },
-
   // plugin
   plugins: [
     new HtmlWebpackPlugin({
