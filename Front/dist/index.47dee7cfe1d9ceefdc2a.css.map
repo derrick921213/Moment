@@ -1,0 +1,1 @@
+{"version":3,"file":"index.47dee7cfe1d9ceefdc2a.css","mappings":"AAAA;EACE,UAAU;EACV,SAAS;EACT,8BAAsB;UAAtB,sBAAsB;EACtB,mBAAmB;AACrB,C","sources":["webpack://webpack/./src/index.css"],"sourcesContent":["*{\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  /* rotate: 20deg; */\n}"],"names":[],"sourceRoot":""}
