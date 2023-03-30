@@ -22,11 +22,11 @@ session_start();
             if(isset($_COOKIE["id"]) && isset($_COOKIE["sss"]) && isset($_SESSION['ucode'])){
                 $Controller = new Controller($user,$passwd);
                 if($Controller->checkUserStatus($_COOKIE["id"],$_COOKIE["sss"])){
-                    header('location: page/dashboard.php');
+                    header('location: '.Web_Root_Path.'page/dashboard.php');
                     exit();
                 }
                 else{
-                    header('location:index.php');
+                    header('location:'.Web_Root_Path."index.php");
                     exit();
                 }
             }

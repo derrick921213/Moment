@@ -17,21 +17,21 @@ $URLS = array(
 );
 
 function Base(callable $fn){
-    require_once('config.php');
-    require_once('core/controller.Class.php');
+    require_once(ROOT_PATH.'config.php');
+    require_once(Core_PATH.'controller.Class.php');
     if (isset($_SESSION['ucode'])) {
         $Controller = new Controller($user, $passwd);
         if($_COOKIE['id']!=$_SESSION['id']){
-            header('location:logout.php'); 
+            header('location:'.Web_Root_Path."logout.php"); 
             exit();
         }
         if ($Controller->checkUserStatus($_COOKIE["id"], $_COOKIE["sss"])) {
             return $fn();
         } else {
-            header('location:index.php');
+            header('location:'.Web_Root_Path."index.php");
         }
     } else {
-        header('location:index.php');
+        header('location:'.Web_Root_Path."index.php");
         die();
     }
 }
