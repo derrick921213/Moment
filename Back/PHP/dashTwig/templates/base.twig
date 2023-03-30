@@ -9,7 +9,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.js"
         integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="{{ session.Resource_PATH }}style1.css">
 </head>
 
 <body>
@@ -18,7 +18,7 @@
         <aside>
             <div class="top">
                 <div class="logo">
-                    <img src="./images/logo.png">
+                    <img src=" {{ session.Image_PATH }}logo.png">
                     <h2>EGA<span class="danger">TOR</span></h2>
                 </div>
                 <div class="close" id="close-btn">
@@ -72,7 +72,7 @@
                     <h3>Add Product</h3>
                 </a> #}
 
-                <a href="logout.php">
+                <a href="{{session.LOGOUT}}">
                     <span class="material-icons-sharp">logout</span>
                     <h3>Logout</h3>
                 </a>
@@ -110,7 +110,7 @@
             {% block right %} {% endblock %}
         </div>
     </div>
-    <script src="./test.js"></script>
+    <script src="{{ session.Resource_PATH }}test.js"></script>
 </body>
 
 </html>

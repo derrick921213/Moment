@@ -1,7 +1,7 @@
 <?php
-require_once('config.php');
-require_once('core/controller.Class.php');
-define('ROOT_PATH', dirname(__DIR__) . '/');
+require_once('FileRoute.php');
+require_once(ROOT_PATH.'config.php');
+require_once(Core_PATH.'controller.Class.php');
 session_start();
 ?>
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ session_start();
             if(isset($_COOKIE["id"]) && isset($_COOKIE["sss"]) && isset($_SESSION['ucode'])){
                 $Controller = new Controller($user,$passwd);
                 if($Controller->checkUserStatus($_COOKIE["id"],$_COOKIE["sss"])){
-                    header('location:dashboard.php');
+                    header('location: page/dashboard.php');
                     exit();
                 }
                 else{
@@ -32,7 +32,7 @@ session_start();
             }
             else{
         ?>
-        <img src="img/logo.png" alt="Logo" style="display: table;margin:0 atuo;max-width: 150px;"/>
+        <img src="images/Logo.png" alt="Logo" style="display: table;margin:0 atuo;max-width: 150px;"/>
         <form action="" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email Address</label>

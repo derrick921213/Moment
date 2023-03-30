@@ -1,11 +1,12 @@
 <?php
-require_once('core/controller.Class.php');
-require_once('config.php');
+require_once('FileRoute.php');
+require_once(Core_PATH.'controller.Class.php');
+require_once(ROOT_PATH.'config.php');
 // require_once('SessionMG.php');
 session_start();
 //Start Debug Message
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+// error_reporting(E_ALL);
+// ini_set('display_errors', 1);
 //End Debug Message
 if(isset($_GET["code"])){
     $_SESSION['ucode'] = $_GET["code"];

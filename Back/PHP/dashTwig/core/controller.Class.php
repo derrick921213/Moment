@@ -1,5 +1,5 @@
 <?php
-define('ROOT_PATH', dirname(__DIR__) . '/');
+require_once(dirname(__DIR__).'/FileRoute.php');
 require_once(ROOT_PATH.'config.php');
 session_start();
 class Connect extends PDO{
