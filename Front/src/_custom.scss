@@ -1,0 +1,22 @@
+@import "../node_modules/bootstrap/scss/functions";
+
+$primary: #ff714e;
+$secondary: #d0021c;
+
+@import "../node_modules/bootstrap/scss/variables";
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 3.5,
+  7: $spacer * 4,
+);
+
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";

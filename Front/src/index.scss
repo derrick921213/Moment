@@ -1,0 +1,10 @@
+@import "_custom.scss";
+h1,h2,h3,h4,h5,h6,p,div,a,label,form{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+img{
+  height: 260px;
+  object-fit: contain;
+}
