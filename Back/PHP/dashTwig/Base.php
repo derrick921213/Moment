@@ -10,8 +10,8 @@ $URLS = array(
     "logout" => Logout,
     "session" => $_SESSION,
     //定義網站URL
-    "dashboard" => $_SESSION["dashboard"], 
-    "customers" => $_SESSION["customers"],
+    "dashboard" => $_SESSION["Route-dashboard"], 
+    "customers" => $_SESSION["Route-customers"],
     //End
 );
 

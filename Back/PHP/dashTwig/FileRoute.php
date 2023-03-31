@@ -7,8 +7,6 @@ define('Core_PATH', ROOT_PATH . 'core' . '/');
 define('Base', ROOT_PATH . 'Base.php');
 
 //Define web Url
-$path = $_SERVER['PHP_SELF'];
-$myinfo = pathinfo($path);
 define('Web_Root_Path',"/Back/PHP/dashTwig".'/'); //這裡之後搬家之後需要修正路徑位置
 define('Resource_PATH', Web_Root_Path.'resource' . '/');
 define('Page_PATH',Web_Root_Path.'page' . '/');
@@ -58,6 +56,6 @@ function strriposfunction($val = "", $type = "")
 }
 foreach (outputFiles(ROOT_PATH."page") as $file) {
     // define(strriposfunction($val=$file,$type="1"),$file);
-    $_SESSION[strriposfunction($val=$file,$type="1")] = $file;
+    $_SESSION["Route-".strriposfunction($val=$file,$type="1")] = $file;
 }
 ?>
