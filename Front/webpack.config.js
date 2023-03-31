@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
 module.exports = {
@@ -11,14 +12,17 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "index.[hash].js",
   },
-
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000
+  },
   // loader
   // 因為webpack預設只看得懂js所以專案有用到js以外的就需要裝上對應的loader來編譯
   // 每個loader都有可以設定的規則寫在rules裡
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.css$|\.scss$/i,
         // use: ["style-loader", "css-loader"],
         use: [
           MiniCssExtractPlugin.loader,
@@ -30,6 +34,9 @@ module.exports = {
           },
           {
             loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader'
           }
         ],
       },
@@ -48,6 +55,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "index.[hash].css",
     }),
+    new CleanWebpackPlugin(),
   ],
 
   // 開啟devtool可以在瀏覽器除錯時看到最原始的程式碼而不會是預設打包好的原始碼
