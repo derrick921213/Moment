@@ -57,6 +57,7 @@ function strriposfunction($val = "", $type = "")
     return $fileName;
 }
 foreach (outputFiles(ROOT_PATH."page") as $file) {
-    define(strriposfunction($val=$file,$type="1"),$file);
+    // define(strriposfunction($val=$file,$type="1"),$file);
+    $_SESSION[strriposfunction($val=$file,$type="1")] = $file;
 }
 ?>

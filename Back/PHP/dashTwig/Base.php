@@ -11,8 +11,8 @@ $URLS = array(
     "session" => $_SESSION,
     //這個是使用foreach定義常數所以會抓不到定義，但是他是對的
     //定義網站URL
-    "dashboard" => dashboard, 
-    "customers" => customers,
+    "dashboard" => $_SESSION["dashboard"], 
+    "customers" => $_SESSION["customers"],
     //End
 );
 
