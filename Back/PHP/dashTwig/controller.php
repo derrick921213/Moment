@@ -27,6 +27,7 @@ if(isset($token["error"])!="invalid_grant"){
         'givenName' => $userData['givenName'] 
     ); 
 
+
     //insert data
     $Controller = new Controller($user,$passwd);
     echo $Controller->insertData(array(

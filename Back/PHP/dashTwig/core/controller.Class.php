@@ -103,6 +103,8 @@ class Controller{
             exit();
         }
     }
-    
+    function GetData($data){
+        
+    } 
 }
 ?>
