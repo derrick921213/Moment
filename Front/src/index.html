@@ -45,6 +45,11 @@
           <div class="shadow-lg p-3">
             <img :src="product.image" class="w-100" alt="">
             <h4 class="fs-6" style="min-height: 60px;">{{product.title}}</h4>
+            <div class="d-flex align-items-baseline text-white">
+              <button class="btn btn-primary btn-sm" @click="minus(product)">-</button>
+              <input type="text" class="form-control w-100 m-2 text-center" v-model="product.amountShow">
+              <button class="btn btn-primary btn-sm" @click="plus(product)">+</button>
+            </div>
           </div>
         </div>
       </div>
@@ -52,4 +57,5 @@
   </div>
 </body>
 <script src="https://unpkg.com/vue@3"></script>
+
 </html>
