@@ -7,8 +7,8 @@ Vue.createApp({
     }
   },
   created() {
-    let url = "https://fakestoreapi.com/products";
-    // let url = "/Back/PHP/readJSON/index.php"
+    // let url = "https://fakestoreapi.com/products";
+    let url = "../../Back/PHP/readJSON/product.json"
     fetch(url).then(res => res.json()).then(data => {
       this.products = data;
     })
