@@ -1,5 +1,5 @@
 import "./index.scss";
-import Collapse from "bootstrap/js/dist/collapse";
+// import Collapse from "bootstrap/js/dist/collapse";
 import Modal from "bootstrap/js/dist/modal";
 Vue.createApp({
   data() {
