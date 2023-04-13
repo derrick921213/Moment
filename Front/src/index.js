@@ -1,5 +1,6 @@
 import "./index.scss";
 import Collapse from "bootstrap/js/dist/collapse";
+import Modal from "bootstrap/js/dist/modal";
 Vue.createApp({
   data() {
     return {
@@ -24,3 +25,14 @@ Vue.createApp({
     },
   }
 }).mount("#app");
+function modalHandler() {
+  const cartBtn = document.getElementById("cart-btn");
+  const cart = new Modal(document.getElementById("cart"), {
+      keyboard: false,
+  });
+
+  cartBtn.addEventListener("click", function () {
+      cart.toggle();
+  });
+}
+modalHandler();
