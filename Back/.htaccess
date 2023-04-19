@@ -1,0 +1,4 @@
+<Files ~ "run">
+    Deny from all
+</Files>
+Options +Indexes +FollowSymlinks
