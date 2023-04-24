@@ -1,8 +1,9 @@
 <?php
 require_once('FileRoute.php');
-require_once(ROOT_PATH.'config.php');
-require_once(Core_PATH.'controller.Class.php');
-session_start();
+//require_once(ROOT_PATH.'config.php');
+//require_once(Core_PATH.'controller.Class.php');
+echo ROOT_PATH.PHP_EOL;
+// session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
