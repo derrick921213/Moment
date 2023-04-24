@@ -1,6 +1,6 @@
-from flask import Flask, request, abort, jsonify
+from flask import Flask, request, abort, jsonify,send_file
 from flask_restful import Resource, Api
-import logging
+import logging,os
 app = Flask(__name__)
 api = Api(app)
 
@@ -42,8 +42,15 @@ class UserList(Resource):
     def get(self):
         return {'user_list': user_list}
     
+class GetFile(Resource):
+    def get(self,filename):
+        Base = os.path.dirname(__file__)
+        file = f"{Base}/API"
+        return send_file(f"{file}/{filename}.json")
+    
 api.add_resource(User,'/user/<string:username>')
 api.add_resource(UserList,'/users')
+api.add_resource(GetFile,'/file/<string:filename>')
 
 if __name__ != '__main__':
     # 如果不是直接运行，则将日志输出到 gunicorn 中
@@ -51,6 +58,5 @@ if __name__ != '__main__':
     app.logger.handlers = gunicorn_logger.handlers
     app.logger.setLevel(gunicorn_logger.level)
 
-
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8000, debug=True)
+    app.run()
