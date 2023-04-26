@@ -83,7 +83,15 @@
                 <div class="d-flex justify-content-around align-items-center w-75">
                   <p class="mb-0">{{ item.title }}</p>
                   <small class="text-secondary">{{ item.price }}元</small>
-
+                  <div class="d-flex">
+                    <button type="button" class="btn btn-primary btn-sm" @click="minus(item)">
+                      -
+                    </button>
+                    <input type="text" class="form-control w-50 text-center" min="1" max="9" v-model.number="item.amount" />
+                    <button type="button" class="btn btn-primary btn-sm" @click="plus(item)">
+                      +
+                    </button>
+                  </div>
                 </div>
                 <a href="javascript:;">
                   <svg @click="removeFromCart(index)" xmlns="http://www.w3.org/2000/svg" width="26" height="26"

@@ -49,18 +49,6 @@ Vue.createApp({
     },
   },
   created() {
-    let url = "https://moment.duacodie.com/Back/PHP/readJSON/product.json";
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        this.products = data;
-        this.products.forEach((product) => {
-          product.amountShow = 0;
-        });
-      });
-  },
-
-  created() {
     let url = "https://moment.duacodie.com/Back/PHP/readJSON/product.json"
     fetch(url).then(res => res.json()).then(data => {
       this.products = data;
