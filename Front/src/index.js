@@ -71,6 +71,14 @@ Vue.createApp({
     },
     getCartCount() {
       return this.cartItems.reduce((total, item) => total + item.quantity, 0);
+    },
+    increaseQuantity(item) {
+      item.quantity++;
+    },
+    decreaseQuantity(item) {
+      if (item.quantity > 1) {
+        item.quantity--;
+      }
     }
   },
   computed: {
