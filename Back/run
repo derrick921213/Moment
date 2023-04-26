@@ -1,0 +1,4 @@
+#!/bin/bash
+sudo rm -rf /var/www/Moment/Back/flask_rest
+sudo cp -r ./flask_rest /var/www/Moment/Back/
+sudo systemctl restart flaskrest.service
