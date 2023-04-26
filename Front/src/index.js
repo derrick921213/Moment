@@ -4,7 +4,8 @@ import Modal from "bootstrap/js/dist/modal";
 Vue.createApp({
   data() {
     return {
-      products: []
+      products: [],
+      amountShow: 0,
     }
   },
   created() {
