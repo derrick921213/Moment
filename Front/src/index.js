@@ -9,9 +9,18 @@ Vue.createApp({
     };
   },
   methods: {
+    // minus(product) {
+    //   this.addToCart(product, false);
+    // },
     minus(product) {
-      this.addToCart(product, false);
+      const index = this.cartItems.findIndex((item) => item.id === product.id);
+      if (index > -1) {
+        if (this.cartItems[index].amount > 1) {
+          this.addToCart(product, false);
+        }
+      }
     },
+
     plus(product) {
       this.addToCart(product);
     },
