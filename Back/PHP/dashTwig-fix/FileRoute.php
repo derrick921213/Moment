@@ -7,7 +7,7 @@ define('Core_PATH', ROOT_PATH . 'core' . '/');
 define('Base', ROOT_PATH . 'Base.php');
 
 //Defne web Url
-define('Web_Root_Path',"/Back/PHP/dashTwig-fix".'/'); //這裡之後搬家之後需要修正路徑位置
+define('Web_Root_Path',$_SESSION['WEB_ROOT'].'/'); //這裡之後搬家之後需要修正路徑位置
 define('Resource_PATH', Web_Root_Path.'resource' . '/');
 define('Page_PATH',Web_Root_Path.'page' . '/');
 define('Image_PATH', Web_Root_Path.'images' . '/');
