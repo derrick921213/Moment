@@ -4,6 +4,7 @@ session_start();
 define('Vendor_PATH', dirname(__DIR__) . '/vendor' . '/');
 define('ROOT_PATH', dirname(__FILE__) . '/');
 define('Core_PATH', ROOT_PATH . 'core' . '/');
+define('Function_PATH', ROOT_PATH . 'functions' . '/');
 define('Base', ROOT_PATH . 'Base.php');
 
 //Defne web Url
