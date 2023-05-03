@@ -1,4 +1,3 @@
-<Files ~ "run">
-    Deny from all
-</Files>
+Order allow,deny
+Deny from all
 Options -Indexes +FollowSymlinks
