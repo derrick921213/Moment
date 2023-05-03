@@ -21,16 +21,16 @@ function Base(callable $fn){
     if (isset($_SESSION['ucode'])) {
         $Controller = new Controller($user, $passwd);
         if($_COOKIE['id']!=$_SESSION['id']){
-            header('location:'.Web_Root_Path."logout.php"); 
+            header('location:'.Web_Root_Path."logout"); 
             exit();
         }
         if ($Controller->checkUserStatus($_COOKIE["id"], $_COOKIE["sss"])) {
             return $fn();
         } else {
-            header('location:'.Web_Root_Path."index.php");
+            header('location:'.Web_Root_Path."index");
         }
     } else {
-        header('location:'.Web_Root_Path."index.php");
+        header('location:'.Web_Root_Path."index");
         die();
     }
 }

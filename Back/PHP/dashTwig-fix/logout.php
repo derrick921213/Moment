@@ -6,6 +6,6 @@ if (isset($_SESSION['ucode'])){
     unset($_SESSION['ucode']);
     session_destroy();
 }
-header("Location: index.php");
+header("Location: index");
 die();
 ?>

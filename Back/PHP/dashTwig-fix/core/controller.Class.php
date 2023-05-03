@@ -88,7 +88,7 @@ class Controller{
                 setcookie("id",$this->db->lastInsertId(),time()+60*60*24*30,"/","moment.duacodie.com");
                 setcookie("sss",$session,time()+60*60*24*30,"/","moment.duacodie.com");
                 $_SESSION['id'] = $this->db->lastInsertId();
-                header('Location: index.php');
+                header('Location: index');
                 exit();
             }
             else{
@@ -99,7 +99,7 @@ class Controller{
             setcookie("id",$info["id"],time()+60*60*24*30,"/","moment.duacodie.com");
             setcookie("sss",$info["session"],time()+60*60*24*30,"/","moment.duacodie.com");
             $_SESSION['id'] = $info["id"];
-            header('Location: index.php');
+            header('Location: index');
             exit();
         }
     }
