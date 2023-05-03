@@ -2,5 +2,3 @@
     Deny from all
 </Files>
 Options +Indexes +FollowSymlinks
-RewriteEngine on
-RewriteRule ^([^./]+)/?$ $1.php [L]
