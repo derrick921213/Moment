@@ -3,6 +3,7 @@ require_once('FileRoute.php');
 require_once(ROOT_PATH.'config.php');
 require_once(Core_PATH.'controller.Class.php');
 session_start();
+echo $_SERVER['PHP_SELF'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
