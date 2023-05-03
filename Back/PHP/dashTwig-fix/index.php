@@ -4,11 +4,10 @@ $q = explode('/',$_SERVER['PHP_SELF']);
 array_pop($q);
 $q = implode("/", $q);
 $_SESSION['WEB_ROOT'] = $q;
-echo $_SESSION["WEB_ROOT"];
 require_once('FileRoute.php');
 require_once(ROOT_PATH.'config.php');
 require_once(Core_PATH.'controller.Class.php');
-echo Page_PATH;
+echo Web_Root_Path.PHP_EOL.Page_PATH;
 ?>
 <!DOCTYPE html>
 <html lang="en">
