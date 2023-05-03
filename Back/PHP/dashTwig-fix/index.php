@@ -4,6 +4,8 @@ require_once(ROOT_PATH.'config.php');
 require_once(Core_PATH.'controller.Class.php');
 session_start();
 echo $_SERVER['PHP_SELF'];
+$q = explode('/',$_SERVER['PHP_SELF']);
+echo $q;
 ?>
 <!DOCTYPE html>
 <html lang="en">
