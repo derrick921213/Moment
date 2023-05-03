@@ -7,7 +7,6 @@ $_SESSION['WEB_ROOT'] = $q;
 require_once('FileRoute.php');
 require_once(ROOT_PATH.'config.php');
 require_once(Core_PATH.'controller.Class.php');
-echo Web_Root_Path.PHP_EOL.Page_PATH;
 ?>
 <!DOCTYPE html>
 <html lang="en">
