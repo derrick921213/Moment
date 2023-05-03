@@ -13,7 +13,7 @@ if(isset($_GET["code"])){
     $token = $gClient->fetchAccessTokenWithAuthCode($_GET["code"]);
 }
 else{
-    header('Location:'.ROOT_PATH."index");
+    header('Location:'.ROOT_PATH."index.php");
     exit();
 }
 if(isset($token["error"])!="invalid_grant"){
@@ -38,7 +38,7 @@ if(isset($token["error"])!="invalid_grant"){
     ));
 }
 else{
-    header('Location: '.Web_Root_Path.'index');
+    header('Location: '.Web_Root_Path.'index.php');
     exit();
 }
 ?>
