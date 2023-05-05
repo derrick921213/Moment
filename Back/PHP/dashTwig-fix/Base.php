@@ -3,7 +3,6 @@ require_once('FileRoute.php');
 require_once(Vendor_PATH.'autoload.php');
 
 session_start();
-static $Dark_Mode = false;
 $URLS = array(
     "avatar" => $_SESSION["userData"]["avatar"],
     "givenName" => $_SESSION['userData']['givenName'],

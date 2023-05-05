@@ -1,8 +1,12 @@
 <?php
+session_start();
+$q = explode('/',$_SERVER['PHP_SELF']);
+array_pop($q);
+$q = implode("/", $q);
+$_SESSION['WEB_ROOT'] = $q;
 require_once('FileRoute.php');
 require_once(ROOT_PATH.'config.php');
 require_once(Core_PATH.'controller.Class.php');
-session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
