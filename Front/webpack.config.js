@@ -49,7 +49,10 @@ module.exports = {
   // plugin
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: "./src/index.php",
+      filename: 'index.php',
+      removeComments: true, // 強制刪除HTML注釋
+
     }),
     // 將css檔案抽離出來css的樣式就不會再index.js內混入，預設沒有裝這個plugin專案的css會被寫在build出來的js內
     new MiniCssExtractPlugin({
