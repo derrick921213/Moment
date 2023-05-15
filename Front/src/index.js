@@ -15,7 +15,7 @@ Vue.createApp({
     minus(product) {
       const index = this.cartItems.findIndex((item) => item.id === product.id);
       if (index > -1) {
-        if (this.cartItems[index].amount > 1) {
+        if (this.cartItems[index].amount >= 0) {
           this.addToCart(product, false);
         }
       }

@@ -10,7 +10,7 @@ module.exports = {
   // 出口
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.[hash].js",
+    filename: "index.js",
   },
   performance: {
     maxEntrypointSize: 512000,
@@ -56,7 +56,7 @@ module.exports = {
     }),
     // 將css檔案抽離出來css的樣式就不會再index.js內混入，預設沒有裝這個plugin專案的css會被寫在build出來的js內
     new MiniCssExtractPlugin({
-      filename: "index.[hash].css",
+      filename: "index.css",
     }),
     new CleanWebpackPlugin(),
   ],
