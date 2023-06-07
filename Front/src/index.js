@@ -1,5 +1,6 @@
 import "./index.scss";
 import Modal from "bootstrap/js/dist/modal";
+import axios from 'axios';
 Vue.createApp({
   data() {
     return {
@@ -55,7 +56,25 @@ Vue.createApp({
       return this.cartItems.reduce((total, item) => {
         return total + item.price * item.amount;
       }, 0);
-    },
+    }, 
+    checkout() {
+      //  axios 
+      const data = {
+        totalPrice: this.getTotalPrice()
+      };
+      axios.post('page/test.php', data)
+        .then(function (response) {
+          // 處理後端回應
+          console.log(response);
+          console.log("success");
+        })
+        .catch(function (error) {
+          // 處理錯誤
+          console.log(error);
+          console.log(data);
+        });
+    }
+
   },
   created() {
     // let url = "https://moment.duacodie.com/Back/PHP/readJSON/product.json"
