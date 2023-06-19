@@ -77,8 +77,8 @@ Vue.createApp({
 
   },
   created() {
-    // let url = "https://moment.duacodie.com/Back/PHP/readJSON/product.json"
-    let url = "https://moment.duacodie.com/api/menu";
+    let url = "https://fakestoreapi.com/products"
+    // let url = "https://moment.duacodie.com/api/menu";
     fetch(url).then(res => res.json()).then(data => {
       this.products = data;
       this.products.forEach((product) => {
